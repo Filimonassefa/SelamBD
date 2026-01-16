@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Selam</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+}
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background: radial-gradient(circle at top, #0b0b0d, #000);
+    color:#f6f6f6;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow-x:hidden;
+  }
+	#sec1 p {
+  line-height: 5rem;   /* space between lines */
+  margin-bottom: 16px;  /* space between reasons */
+}
+
+
+  .sparkle{
+    position:fixed;
+    width:4px;
+    height:4px;
+    background:gold;
+    border-radius:50%;
+    opacity:.6;
+    animation: rise 12s linear infinite;
+  }
+  @keyframes rise{0%{transform:translateY(110vh) scale(.6);opacity:.6;}100%{transform:translateY(-10vh) scale(1);opacity:0;}}
+  .lux-card{
+    width:100%;
+    max-width:940px;
+    padding:28px 22px 34px;
+    border-radius:30px;
+    background: rgba(20,20,22,.65);
+    backdrop-filter: blur(14px);
+    border:1px solid rgba(255,215,0,.18);
+    box-shadow:0 40px 100px rgba(0,0,0,.55), inset 0 0 0 1px rgba(255,255,255,.05);
+    position:relative;
+    text-align:center;
+  }
+  .gold-line{
+    height:3px;
+    width:80%;
+    margin:6px auto 16px;
+    background:linear-gradient(90deg, transparent, gold, transparent);
+    border-radius:50%;
+  }
+  .header h1{
+    font-family:'Great Vibes',cursive;
+    font-size:3.5rem;
+    margin:0;
+    background:linear-gradient(135deg,#e6c463,#ffefb6,#d4a419);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .subtext{color:#cfcfcf; margin-bottom:10px;}
+  .message-box{
+    border-radius:22px;
+    border:1px dashed rgba(255,215,0,.5);
+    background:linear-gradient(135deg,rgba(25,25,27,.9),rgba(10,10,10,.9));
+    padding:18px 16px;
+    min-height:150px;
+    text-align:center;
+    font-size:1.05rem;
+    line-height:1.6rem;
+    color:#f2f2f2;
+    margin-bottom:6px;
+    white-space:pre-line;
+  }
+  .button-row{text-align:center;margin-top:8px;}
+  .btn{
+    padding:10px 24px;
+    border-radius:18px;
+    font-size:1.05rem;
+    border:none;
+    cursor:pointer;
+    background:linear-gradient(135deg,#d4af37,#f7e7a1,#b89421);
+    box-shadow:0 14px 36px rgba(212,175,55,.35);
+    transition:transform .15s,box-shadow .15s;
+    color:#111;
+    font-weight:600;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 18px 46px rgba(212,175,55,.45);}
+  .section{margin-top:12px;padding:12px 10px;border-radius:18px;background:rgba(0,0,0,.45);border:1px solid rgba(255,215,0,.15);}
+  .section h3{margin:4px 0 6px;font-weight:600;color:#ffec9b;text-align:center;}
+  .hidden{display:none; animation:fadeIn .5s ease forwards;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+</style>
+</head>
+<body>
+<audio id="bgm" src="https://www.youtube.com/embed/-E5ovOA9VM8?autoplay=1"></audio>
+
+<div class="lux-card">
+  <div class="header">
+    <h1>Happy Birthday, Selam</h1>
+    <div class="subtext">To the girl who makes the world feel softer 🎂</div>
+  </div>
+
+  <div class="gold-line"></div>
+
+  <div class="message-box" id="mainMessage">
+<p>Happy birthday to the most beautiful girl my heart ever knows. May this new year of your life bring you peace, growth, and moments that make you smile without even realizing it. I hope you feel loved today, appreciated always, and surrounded by warmth, even from a distance. You deserve happiness in ways bigger than words, and I’m truly grateful to be part of your journey. I prepared this little thing for you since we can not actually celebrate today together in person. I hope it puts a smile on that pretty face of yours<p/>  </div>
+
+  <div class="button-row">
+    <button class="btn" onclick="reveal()">Tap to open your surprises ✨</button>
+  </div>
+
+  <div class="section hidden" id="sec1">
+    <h3>💛 Reasons you’re special</h3>
+    <p>• You make my life feel better just by being yourself<br>• You listen and you atually pay attention to every single thing <br>• You have a genuinely good and loving heart<br>
+• You make effort, and that effort never goes unnoticed<br>
+• You’re kind in quiet ways....the kind that comes from the heart<br>
+• You’re strong, even on days when you don’t feel like it<br>
+• You bring warmth into places you don’t even realize<br>
+• You have a smile that stays with me longer than you know<br>
+• You make ordinary days feel meaningful<br>
+
+• You’re beautiful in ways that go far beyond looks<br>• You came into my life and quietly changed it</p>
+   
+  </div>
+
+  <div class="section hidden" id="sec2">
+    <h3>📜 A little letter for you</h3>
+    
+
+
+<p>Dear Selam,</p>
+
+<p>Today is your birthday, It’s the day the world gently gained a little more beauty. And even though I can’t be there with you right now, my heart is very much with you. I’ve been thinking about this day for a while....about what I’d want you to feel when you read these words.</p>
+
+<p>You are someone who came into my life quietly, but stayed loudly in my heart. The way you speak, the way you care, the way you understand... all of it matters more to me than you probably realize. You have a presence that brings calm, even from a distance.</p>
+
+<p>Sometimes I catch myself smiling at my phone after our conversations. Sometimes I replay your words in my head without meaning to. And sometimes I just feel grateful, grateful that out of all the people in the world, I get to know you.</p>
+
+<p>What I admire most about you is not just what everyone can see, but what only someone close can feel. Your kindness. Your patience. The softness of your heart. The strength you carry without showing off. You make the world around you better just by being in it. There’s something special about the way you exist in my life. You don’t try too hard, you don’t pretend... you’re just you, and somehow that’s more than enough. Being around you, talking to you even through text or phonecall, feels good, It feels honest, It feels real.</p>
+
+<p>On days when things feel heavy and quiet, talking to you, being with you or just thinking of you brings a sense of warmth I can’t really explain. You have this way of making moments feel lighter, reminding me that good things still exist. That kind of presence is rare, and I don’t take it for granted.<p/>
+
+<p>Even though today we’re apart, I hope you still feel celebrated. I hope you feel loved, appreciated, and deeply valued. Because you deserve that not just on your birthday, but every day.</p>
+
+<p>I don’t know exactly what the future holds but I know this, I’m thankful for you. For every conversation, every laugh, every moment we’ve shared. And I’m looking forward to creating many more memories with you.</p>
+
+<p>Happy Birthday my love 🤍</p>
+<p>May this year bring you peace, growth, and happiness. I hope you always remember how special you are.</p>
+<p>I love you <p/>
+    
+  </div>
+
+  <div class="section hidden" id="sec3">
+    <h3>🤍 A promise</h3>
+    <p>I promise to keep choosing you.<br>
+To be honest with you.<br>
+To respect you, support you, and celebrate you. Not just today, but always.</p>
+
+<p>No matter where life takes us, I’ll always be grateful that our paths crossed.</p>  
+  </div>
+
+  <div class="section hidden" id="sec4">
+    <h3>🎵 A song for you</h3>
+   <p> 
+  <a href="https://youtu.be/rtOvBOTyX00?si=eLFbUeW3plO-34by" target="_blank" style="color:gold; text-decoration:underline;">
+    Click here to listen
+  </a>
+</p>
+
+  </div>
+</div>
+
+<script>
+function reveal(){
+  document.getElementById('sec1').style.display='block';
+  document.getElementById('sec2').style.display='block';
+  document.getElementById('sec3').style.display='block';
+  document.getElementById('sec4').style.display='block';
+  document.getElementById('bgm').play().catch(()=>{});
+}
+</script>
+</body>
+</html>
