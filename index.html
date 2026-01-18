@@ -96,10 +96,26 @@
   .section h3{margin:4px 0 6px;font-weight:600;color:#ffec9b;text-align:center;}
   .hidden{display:none; animation:fadeIn .5s ease forwards;}
   @keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+
+
+
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+
 </style>
 </head>
 <body>
-<audio id="bgm" src="https://www.youtube.com/embed/-E5ovOA9VM8?autoplay=1"></audio>
+<audio id="bgMusic" loop>
+  <source src="bgmusic.m4a" type="audio/mpeg">
+  </audio>
 
 <div class="lux-card">
   <div class="header">
@@ -177,6 +193,8 @@ To respect you, support you, and celebrate you. Not just today, but always.</p>
   </div>
 </div>
 
+<canvas id="confetti-canvas"></canvas>
+
 <script>
 function reveal(){
   document.getElementById('sec1').style.display='block';
@@ -185,7 +203,101 @@ function reveal(){
   document.getElementById('sec4').style.display='block';
   document.getElementById('bgm').play().catch(()=>{});
 }
+
+
+
+const canvas = document.getElementById("confetti-canvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+let animationId;
+
+function createParticles(count, burst = false) {
+  for (let i = 0; i < count; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: burst ? canvas.height / 2 : -20,
+      w: Math.random() * 6 + 4,
+      h: Math.random() * 10 + 6,
+      vx: burst ? (Math.random() - 0.5) * 8 : (Math.random() - 0.5),
+      vy: burst ? (Math.random() - 0.5) * 8 : Math.random() * 0.6 + 0.3,
+      rotation: Math.random() * 360,
+      rotationSpeed: (Math.random() - 0.5) * 4,
+      color: ["#FFD700", "#FFB700"][Math.floor(Math.random() * 2)],
+      type: Math.random() > 0.7 ? "heart" : "paper"
+    });
+  }
+}
+
+function drawParticle(p) {
+  ctx.save();
+  ctx.translate(p.x, p.y);
+  ctx.rotate(p.rotation * Math.PI / 180);
+  ctx.fillStyle = p.color;
+
+  if (p.type === "heart") {
+    ctx.beginPath();
+    ctx.moveTo(0, -5);
+    ctx.bezierCurveTo(-5, -10, -15, 0, 0, 10);
+    ctx.bezierCurveTo(15, 0, 5, -10, 0, -5);
+    ctx.fill();
+  } else {
+    ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+  }
+
+  ctx.restore();
+}
+
+function updateParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  particles.forEach(p => {
+    p.x += p.vx;
+    p.y += p.vy;
+    p.rotation += p.rotationSpeed;
+
+    if (p.y > canvas.height + 20) {
+      p.y = -20;
+      p.x = Math.random() * canvas.width;
+    }
+
+    drawParticle(p);
+  });
+
+  animationId = requestAnimationFrame(updateParticles);
+}
+
+function startRomanticConfetti() {
+  particles = [];
+
+  // Initial burst
+  createParticles(120, true);
+  updateParticles();
+
+  // Soft falling confetti after burst
+  setTimeout(() => {
+    createParticles(80, false);
+  }, 800);
+
+  }
+
+
+
+const buttons = document.querySelectorAll(".btn");
+const music = document.getElementById("bgMusic");
+
+buttons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    music.play().catch(() => {});
+    startRomanticConfetti();
+  });
+});
+
+
 </script>
+
 </body>
 </html>
-
